@@ -2,7 +2,6 @@ package windydang.com.demo.Activity;
 
 import android.Manifest;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
@@ -28,7 +27,6 @@ import java.util.List;
 import java.util.Map;
 
 import windydang.com.demo.R;
-import windydang.com.demo.Receiver.NetworkChangeReceiver;
 
 public class LoginActivity extends AppCompatActivity {
     private final String TAG = getClass().getSimpleName();
@@ -36,7 +34,6 @@ public class LoginActivity extends AppCompatActivity {
     private final String PASSWORD = "PASSWORD";
     private Button btnLogin;
     private EditText edtUsername, edtPassword;
-    NetworkChangeReceiver networkChangeReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,14 +126,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         Log.d(TAG, "onStart: ");
-//        initBroadcastReceiver();
-    }
-
-    private void initBroadcastReceiver() {
-        networkChangeReceiver = new NetworkChangeReceiver();
-        IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
-        registerReceiver(networkChangeReceiver, intentFilter);
     }
 
     @Override
@@ -161,7 +150,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         Log.d(TAG, "onStop: ");
-//        unregisterReceiver(networkChangeReceiver);
     }
 
     @Override
