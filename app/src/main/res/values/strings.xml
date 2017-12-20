@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Demo</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="hello">Hello</string>
+    <string name="sign_up">Sign up for Demo</string>
 </resources>
